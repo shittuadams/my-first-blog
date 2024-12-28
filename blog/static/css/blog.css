@@ -187,6 +187,58 @@ form button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+/* Pagination */
+/* General Styles for Pagination */
+.pagination {
+    display: flex;
+    justify-content: center; /* Center the pagination links */
+    margin: 20px 0;
+}
+
+/* Styling for individual links */
+.pagination a {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding for a button-like appearance */
+    margin: 0 5px; /* Space between the buttons */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Styling for Previous Button */
+.pagination .previous {
+    background-color: #007bff; /* Gray for previous button */
+}
+
+.pagination .previous:hover {
+    background-color: #013770; /* Darker gray on hover */
+}
+
+/* Styling for Next Button */
+.pagination .next {
+    background-color: #007bff; /* Green for next button */
+}
+
+.pagination .next:hover {
+    background-color:  #013770; /* Darker green on hover */
+}
+
+/* Hover Effects */
+.pagination a:hover {
+    background-color: #0056b3; /* Dark blue on hover */
+    text-decoration: none;
+}
+
+/* Styling for active page number (if you include it in your template) */
+.pagination .active {
+    background-color: #17a2b8; /* Teal for active page */
+    color: white; /* White text */
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .page-header {
@@ -212,5 +264,8 @@ form button:hover {
 
     form {
         padding: 15px;
+    }
+    .pagination a {
+        padding: 8px 16px; /* Slightly smaller padding on mobile */
     }
 }

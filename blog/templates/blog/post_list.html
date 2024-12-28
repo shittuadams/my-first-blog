@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
+    {% for post in page_obj %}
         <article class="post">
             <time  class="date">published: {{post.published_date}}</time>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
@@ -9,8 +9,19 @@
                 {{post.text|truncatewords:50|linebreaksbr}}
                 <a href="{% url 'post_detail' pk=post.pk %}">Read More</a> 
             </p>
-            
         </article>
     {% endfor %}
+    
+    <div class="pagination">
+    {% if page_obj.has_previous %}
+        <a class="previous" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+    
+    {% if page_obj.has_next %}
+        <a class="next" href="?page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+    </div>
+    
+
 {% endblock %}
                     
